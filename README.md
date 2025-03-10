@@ -18,3 +18,6 @@ In app Dir paste submit.php and also create test.php "...... <?php phpinfo(); ?>
     │   └── index.html
     └── config
         └── default.conf
+
+
+docker-compose up -d
