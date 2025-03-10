@@ -1,0 +1,36 @@
+services:
+  myweb:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /threetier/web/code/:/usr/share/nginx/html/
+      - /threetier/web/config/:/etc/nginx/conf.d/
+    networks:
+      - webnet
+    container_name: myweb
+    depends_on:
+      - db
+      - app
+  app:
+    image: bitnami/php-fpm
+    volumes:
+      - /threetier/app/code:/app/
+    networks:
+      - webnet
+      - dbnet
+    container_name: app
+    depends_on:
+      - db
+  db:
+    build: ./db
+    container_name: db
+    volumes:
+      - myvolume:/var/lib/mysql/
+    networks:
+      - dbnet
+volumes:
+  myvolume: {}
+networks:
+  webnet: {}
+  dbnet: {}
