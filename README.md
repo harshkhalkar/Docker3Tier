@@ -3,7 +3,7 @@ In db Dir. pate init.sql & Dockerfile.
 In web Dir create code & config Dir. Under code dir paste index.html & form.html Under config dir paste default.conf
 In app Dir paste submit.php and also create test.php "...... <?php phpinfo(); ?> ......"
 
-/threetier/
+/3arch/
 ├── app
 │   └── code
 │       ├── test.php
@@ -21,3 +21,4 @@ In app Dir paste submit.php and also create test.php "...... <?php phpinfo(); ?>
 
 
 docker-compose up -d
+docker ps OR docker-compose ps
