@@ -11,7 +11,7 @@ echo $gender;
 echo $comment;
 echo $website;
  
-$servername = "";
+$servername = "db";
 $username = "root";
 $password = "";
 $dbname = "info";
